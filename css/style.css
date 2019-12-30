@@ -63,6 +63,27 @@ h4:before {
     top: 9px;
 }
 
+h5 {
+    font-family: 'Lato', sans-serif;
+    text-transform: capitalize;
+    letter-spacing: 4px;
+    position: relative;
+    color: #425BB5;
+    font-weight: 600;
+text-align: center;
+}
+
+h6 {
+    font-family: 'Lato', sans-serif;
+    font-style: bold;    
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    position: relative;
+    color: black;
+    font-weight: 500;
+text-align: center;
+}
+
 
 /* General
 ==================================================*/
@@ -445,10 +466,10 @@ a.active {
 }
 
 
-/* projects section
+/* culturales section
 ==================================================*/
 
-#projects {
+#culturales {
     padding: 100px 0;
 }
 
@@ -550,7 +571,7 @@ a.active {
 }
 
 .portfolio_item:hover .portfolio_item_hover {
-    opacity: 1;
+    opacity: 0.8;
     -webkit-transform: translateX(0);
     transform: translateX(0);
 }
@@ -579,10 +600,6 @@ a.active {
     text-align: center;
 }
 
-.portfolio_item img {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-}
 
 .portfolio-padding {
     padding: 50px 0;
@@ -599,7 +616,7 @@ a.active {
 }
 
 .popup-modal {
-    background: #fff;
+	opacity: 0.5;    
 }
 
 .close-popup-modal {
@@ -627,6 +644,28 @@ a.active {
     line-height: 50px;
 }
 
+
+
+/* humdig section
+==================================================*/
+
+#humdig {
+padding: 100px 0;
+background: white
+text-align: center;
+}
+
+.humdigimg {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+    }
+
+.col-md {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+    }
 
 /* contact
 ==================================================*/
