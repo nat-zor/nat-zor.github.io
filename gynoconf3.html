@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theorizing Gender Inequality Workshop - Venice 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --orange-highlight: #FE9C41; 
+            --taupe-muted: #7F6E5E;      
+            --off-white-clean: #F9FDF9;  
+            --sienna-warm: #E2703E;      
+            --cordovan-dark: #6C303C;    
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--off-white-clean);
+            color: #2b2b2b;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            padding-top: 80px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: var(--cordovan-dark);
+        }
+
+        /* NAVIGATION */
+        nav {
+            background: var(--cordovan-dark);
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: var(--off-white-clean);
+            text-decoration: none;
+            margin: 0 20px;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--orange-highlight); }
+
+        /* HERO SECTION */
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            color: var(--cordovan-dark);
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+
+        .venue-link {
+            display: inline-block;
+            color: var(--cordovan-dark);
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 2px solid var(--sienna-warm);
+            padding-bottom: 2px;
+            margin: 15px 0;
+            transition: 0.3s;
+        }
+
+        .venue-link:hover { color: var(--sienna-warm); border-color: var(--orange-highlight); }
+
+        .main-image {
+            width: 100%;
+            max-width: 850px;
+            border: 1px solid #ddd;
+            padding: 8px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin: 30px 0;
+        }
+
+        /* CONTENT CONTAINERS */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--sienna-warm);
+        }
+
+        /* THEME SECTION */
+        .abstract-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .abstract-card {
+            background: white;
+            padding: 40px;
+            border-left: 4px solid var(--cordovan-dark);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        /* SCHEDULE SECTION */
+        #schedule-area { background-color: #f2f5f2; }
+
+        .day-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: var(--cordovan-dark);
+            border-bottom: 1px solid var(--orange-highlight);
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .session-row {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            padding: 25px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .session-time {
+            font-weight: 700;
+            color: var(--sienna-warm);
+        }
+
+        .session-presenter {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--cordovan-dark);
+        }
+
+        .session-affiliation {
+            display: block;
+            color: var(--taupe-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        /* SPONSORS GRID */
+        .sponsors-strip {
+            background: var(--cordovan-dark);
+            color: var(--off-white-clean);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .image-grid { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+            justify-content: center; 
+            margin-top: 30px;
+        }
+
+        .image-grid img { 
+            width: 180px; 
+            height: 120px; 
+            object-fit: contain; /* Better for logos */
+            background: white;
+            padding: 10px;
+            border-radius: 4px; 
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: #222;
+            color: #777;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 850px) {
+            .abstract-container { grid-template-columns: 1fr; }
+            .session-row { grid-template-columns: 1fr; gap: 8px; }
+            h1 { font-size: 2rem; }
+            .image-grid img { width: calc(50% - 20px); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#theme">Workshop Theme</a>
+        <a href="#schedule">Schedule</a>
+    </nav>
+
+    <div id="home" class="hero" style="margin-top:20px;">
+        <p style="color: var(--taupe-muted); letter-spacing: 4px; text-transform: uppercase; font-size: 0.9rem;">International Workshop</p>
+        <h1>Theorizing Gender Inequality: Renaissance and Early Modern Perspectives</h1>
+        
+        <p style="margin-top: 10px; font-weight: 400; color: var(--taupe-muted);">May 21 and 22, 2026</p>
+        <a href="https://www.unive.it/pag/30119/" target="_blank" class="venue-link">Aula Mario Baratto, Ca' Foscari University of Venice</a>
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Corisca_and_the_Satyr_by_Artemisia_Gentileschi.jpg" alt="Artemisia Gentileschi" class="main-image">
+    </div>
+
+    <div id="theme" class="container">
+        <h2>Workshop Theme</h2>
+        <div class="abstract-container">
+            <div class="abstract-card">
+                <h3>Thematic abstract</h3>
+                <p>This workshop aims to explore Renaissance and early modern accounts of the genesis of gender inequality...</p>
+            </div>
+            <div class="abstract-card">
+                <h3>Résumé thématique</h3>
+                <p>Cet atelier vise à explorer les récits de la Renaissance et de la première modernité sur la genèse des inégalités...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="schedule-area">
+        <div class="container" id="schedule">
+            <h2>Workshop Schedule</h2>
+            <span class="day-label">Thursday, May 21</span>
+            <div class="session-row">
+                <div class="session-time">09:15 - 10:30</div>
+                <div>
+                    <span class="session-presenter">Marguerite Deslauriers</span>
+                    <span class="session-affiliation">McGill University</span>
+                    <p>Keynote Talk: Nature and Custom as Sources of the Subjection of Women</p>
+                </div>
+            </div>
+            </div>
+    </div>
+
+    <div class="sponsors-strip">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h3 style="color: var(--off-white-clean); margin-bottom: 25px; font-size: 2.4rem;">Institutional Sponsors</h3>
+            <p style="font-size: 1rem; line-height: 2; font-weight: 300;">
+                This workshop is organized by research project - <strong>HORIZON-MSCA-2022-PF-01 “GYNODICY”</strong>...
+            </p>
+
+            <div class="image-grid"> 
+                <img src="logo_eu.jpg" alt="Horizon Europe"> 
+                <img src="logo_ca_foscari.png" alt="Ca' Foscari"> 
+                <img src="bshp_colour.png" alt="BSHP"> 
+                <img src="esemp.jpg" alt="ESEMP"> 
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>CA' FOSCARI UNIVERSITY OF VENICE &bull; 2026</p>
+        <p>AULA MARIO BARATTO</p>
+    </footer>
+
+</body>
+</html>
